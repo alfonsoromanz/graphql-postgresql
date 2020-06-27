@@ -1,0 +1,39 @@
+/ -- Query all users and amounts of the transactions he made -- /
+
+query {
+  allUsers {
+    nodes {
+      name
+      transactionsByUserFromId {
+        nodes {
+          amount
+        }
+      }
+    }
+  }
+}
+
+/ -- Query all users and amounts of the transactions he received -- /
+query {
+  allUsers {
+    nodes {
+      name
+      transactionsByUserToId {
+        nodes {
+          amount
+        }
+      }
+    }
+  }
+}
+
+/ -- Query all users and its date of creation -- /
+
+query {
+  allUsers {
+    nodes {
+      name
+      createdDate
+    }
+  }
+}

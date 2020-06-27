@@ -1,0 +1,37 @@
+/ -- Create an user named Pedro and return its Id and Name -- /
+
+mutation {
+  createUser(
+    input: {
+      User: {
+        name: "Pedro"
+      }
+    }
+  ) {
+    User {
+      id
+      name
+    }
+  }
+}
+
+/ -- Create a transaction from Pedro to Alfonso -- / 
+
+mutation {
+  createTransaction(
+    input: {
+      transaction: {
+        amount: 5000,
+        userFromId: 3,
+        userToId: 1
+      }
+    }
+  ) {
+    transaction {
+      id
+      amount
+      userFromId
+      userToId
+    }
+  }
+}
